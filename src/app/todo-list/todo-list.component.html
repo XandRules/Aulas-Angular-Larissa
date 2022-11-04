@@ -1,0 +1,21 @@
+<div class="todo-list" *ngFor="let todoList of todoLists">
+  <p [ngStyle]="{ color: todoList.status === true ? 'green' : 'grey' }">
+    {{ todoList.valor }}
+  </p>
+  <button
+    mat-mini-fab
+    aria-label="Example icon button with a home icon"
+    (click)="concluirTarefa(todoList)"
+  >
+    <mat-icon>V</mat-icon>
+  </button>
+
+  <button
+    color="warn"
+    mat-mini-fab
+    aria-label="Example icon button with a home icon"
+    (click)="enviarTodoParaExcluir(todoList)"
+  >
+    <mat-icon>X</mat-icon>
+  </button>
+</div>
